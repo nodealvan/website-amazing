@@ -1,0 +1,249 @@
+@import url('https://fonts.cdnfonts.com/css/ica-rubrik-black');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
+
+.new-banner {
+    width: 100%;
+    background-image: url('bg.png');
+    height: calc(150vh - 30px);
+    /* Adjust height */
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    animation: easeIn 1s ease;
+}
+
+.new-banner .content .model {
+    background-image: url('canon.png');
+    width: 100%;
+    height: 55vh;
+    position: absolute;
+    bottom: 0;
+    /* Start at the bottom */
+    left: 0;
+    background-size: auto 120%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: 1;
+    animation: modelEaseIn 1s ease;
+}
+
+.new-banner .content {
+    padding-bottom: 60px;
+    /* Increase padding to move content up */
+}
+
+
+.new-banner .slider {
+    position: absolute;
+    width: 200px;
+    height: 230px;
+    top: 15%;
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: autoRun 20s linear infinite;
+    z-index: 2;
+}
+
+@keyframes autoRun {
+    from {
+        transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
+    }
+
+    to {
+        transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
+    }
+}
+
+.new-banner .slider .item {
+    position: absolute;
+    inset: 0;
+    transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(550px);
+}
+
+.new-banner .slider .item img {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.new-banner .content {
+    top: 27%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1400px, 100vw);
+    height: max-content;
+    padding-bottom: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    z-index: 1;
+    animation: slideUp 2s ease-out forwards;
+}
+
+.new-banner .content h1 {
+    font-family: 'ICA Rubrik', sans-serif;
+    font-size: 16em;
+    line-height: 1em;
+    color: #25283B;
+    position: relative;
+    opacity: 0;
+    animation: fadeInScale 2.5s ease-in-out forwards;
+}
+
+.new-banner .content h1::after {
+    position: absolute;
+    inset: 0;
+    content: attr(data-content);
+    z-index: 2;
+    -webkit-text-stroke: 2px #d2d2d2;
+    color: transparent;
+    animation: strokeIn 2s ease forwards;
+}
+
+.new-banner .content .author {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 3s ease-in-out 2s forwards;
+}
+
+.new-banner .content h2 {
+    font-size: 3em;
+}
+
+
+
+
+/* New Animation for the Model */
+@keyframes modelEaseIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+        /* Start from below */
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        /* Move to original position */
+    }
+}
+
+/* Existing Animations */
+@keyframes easeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes strokeIn {
+    0% {
+        -webkit-text-stroke: 4px transparent;
+    }
+
+    100% {
+        -webkit-text-stroke: 2px #d2d2d2;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translate(-50%, 50px);
+    }
+
+    to {
+        transform: translate(-50%, 0);
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .new-banner .slider {
+        width: 160px;
+        height: 200px;
+        left: calc(50% - 80px);
+    }
+
+    .new-banner .slider .item {
+        transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(300px);
+    }
+
+    .new-banner .content h1 {
+        text-align: center;
+        width: 100%;
+        text-shadow: 0 10px 20px #000;
+        font-size: 7em;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .new-banner .slider {
+        width: 100px;
+        height: 150px;
+        left: calc(50% - 50px);
+    }
+
+    .new-banner .slider .item {
+        transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(180px);
+    }
+
+    .new-banner .content h1 {
+        font-size: 5em;
+    }
+}
+
+
+.video-body { /* Menambahkan gaya untuk class baru */
+    font-family: Arial, sans-serif;
+
+    margin: 0;
+    padding: 20px;
+}
+
+.video-container {
+
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 10px; /* Menambahkan jarak 10px di bawah */
+}
+
+.video {
+    width: 100%;
+    border-radius: 8px;
+}

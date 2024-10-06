@@ -1,0 +1,358 @@
+@import url('https://fonts.cdnfonts.com/css/ica-rubrik-black');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
+
+
+
+.new-content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    height: 100%;
+
+}
+
+.new-content .text {
+    position: relative;
+    margin-top: 100px;
+}
+
+.text h1 {
+    margin-bottom: 20px;
+}
+
+.text p {
+    margin-top: 10px;
+}
+
+.card-container {
+    background-color: #a97f13;
+    border-radius: 10px;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 100px;
+}
+
+.card {
+    background-color: transparent;
+    position: relative;
+    width: 400px;
+    height: 280px;
+    border-radius: 15px;
+    overflow: hidden;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: transparent;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+
+}
+
+.card-image {
+    width: 100%;
+    height: 60%;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.3s ease;
+}
+
+.card h3 {
+    margin: 15px 10px;
+    font-size: 1.8em;
+    color: rgb(98, 250, 215);
+    text-align: center;
+}
+
+.card p {
+    margin: 0 10px 15px;
+    font-size: 1em;
+    color: white;
+    text-align: center;
+}
+
+.card:hover .card-image {
+    background-image: url('tampilan1.png');
+}
+
+.card:nth-child(2):hover .card-image {
+    background-image: url('tampilan2.png');
+}
+
+.card:nth-child(3):hover .card-image {
+    background-image: url('tampilan3.png');
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+        width: 90%;
+        height: auto;
+    }
+}
+
+
+
+
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.banner,
+.new-banner,
+.new-content {
+    display: none;
+    text-align: center;
+
+}
+
+#main-banner {
+    display: block;
+}
+
+.new-content {
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #25283B;
+    margin: -2px auto 30px;
+    width: 100%;
+    max-width: 1500px;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    background-image: url('bg.png');
+    height: 100vh;
+    overflow: hidden;
+    animation: easeIn 1s ease;
+}
+
+.banner .slider {
+    position: absolute;
+    width: 200px;
+    height: 250px;
+    top: 5%;
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: autoRun 20s linear infinite;
+    z-index: 2;
+}
+
+@keyframes autoRun {
+    from {
+        transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
+    }
+
+    to {
+        transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
+    }
+}
+
+.banner .slider .item {
+    position: absolute;
+    inset: 0;
+    transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(550px);
+}
+
+.banner .slider .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner .content {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1400px, 100vw);
+    height: max-content;
+    padding-bottom: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    animation: slideUp 2s ease-out forwards;
+}
+
+.banner .content h1 {
+    font-family: 'ICA Rubrik', sans-serif;
+    font-size: 16em;
+    line-height: 1em;
+    color: #25283B;
+    position: relative;
+    opacity: 0;
+    animation: fadeInScale 2.5s ease-in-out forwards;
+}
+
+.banner .content h1::after {
+    position: absolute;
+    inset: 0;
+    content: attr(data-content);
+    z-index: 2;
+    -webkit-text-stroke: 2px #d2d2d2;
+    color: transparent;
+    animation: strokeIn 2s ease forwards;
+}
+
+.banner .content .author {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 3s ease-in-out 2s forwards;
+}
+
+.banner .content h2 {
+    font-size: 3em;
+}
+
+.banner .content .model {
+    background-image: url('pharaoh\ -\ Copy.png');
+    width: 100%;
+    height: 80vh;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-size: auto 130%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: 1;
+    animation: modelEaseIn 1s ease;
+}
+
+@keyframes modelEaseIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes easeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes strokeIn {
+    0% {
+        -webkit-text-stroke: 4px transparent;
+    }
+
+    100% {
+        -webkit-text-stroke: 2px #d2d2d2;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translate(-50%, 50px);
+    }
+
+    to {
+        transform: translate(-50%, 0);
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .banner .slider {
+        width: 160px;
+        height: 200px;
+        left: calc(50% - 80px);
+    }
+
+    .banner .slider .item {
+        transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(300px);
+    }
+
+    .banner .content h1 {
+        text-align: center;
+        width: 100%;
+        text-shadow: 0 10px 20px #000;
+        font-size: 7em;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .banner .slider {
+        width: 100px;
+        height: 150px;
+        left: calc(50% - 50px);
+    }
+
+    .banner .slider .item {
+        transform: rotateY(calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)) translateZ(180px);
+    }
+
+    .banner .content h1 {
+        font-size: 5em;
+    }
+}
+
+
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40vh;
+    position: relative;
+}
+
+.fire-container {
+    transform: translateY(30px);
+    width: 120px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fire-container img {
+    max-width: 100%;
+    height: auto;
+}

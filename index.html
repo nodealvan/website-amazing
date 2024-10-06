@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SATORU</title>
+    <link rel="stylesheet" href="satoru.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="album.css">
+
+
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">SATORU</div>
+        <div class="nav-links">
+            <a href="#home" id="home-link">Home</a>
+            <a href="#album" id="album-link">Album</a>
+            <a href="#services" id="services-link">Random</a>
+            <a href="#contact" id="contact-link">Contact</a>
+        </div>
+        <button class="play-button" id="audio-toggle">Play Audio</button>
+    </nav>
+
+    <div class="column">
+        <div class="banner" id="main-banner">
+            <div class="slider" style="--quantity: 10">
+                <div class="item" style="--position: 1"><img src="pedang.png" alt="Banner Image 1"></div>
+                <div class="item" style="--position: 2"><img src="pedang.png" alt="Banner Image 2"></div>
+                <div class="item" style="--position: 3"><img src="pedang.png" alt="Banner Image 3"></div>
+                <div class="item" style="--position: 4"><img src="pedang.png" alt="Banner Image 4"></div>
+                <div class="item" style="--position: 5"><img src="pedang.png" alt="Banner Image 5"></div>
+                <div class="item" style="--position: 6"><img src="pedang.png" alt="Banner Image 6"></div>
+                <div class="item" style="--position: 7"><img src="pedang.png" alt="Banner Image 7"></div>
+                <div class="item" style="--position: 8"><img src="pedang.png" alt="Banner Image 8"></div>
+                <div class="item" style="--position: 9"><img src="pedang.png" alt="Banner Image 9"></div>
+                <div class="item" style="--position: 10"><img src="pedang.png" alt="Banner Image 10"></div>
+            </div>
+            <div class="content">
+                <h1 data-content="SATORU">NODE ALVAN</h1>
+                <div class="model">
+                    <audio id="audio" src="music.mp3" type="audio/mpeg" loop></audio>
+                </div>
+            </div>
+        </div>
+
+        <!-- kata-kata -->
+        <div class="new-content" id="new-content">
+            <div class="text">
+                <h1>サトル</h1>
+                <p>ようこそ、私のオンラインスペースへ！ここでは、創造性、知識、そして探求に満ちた旅が始まります。インスピレーションやリソース、またはコミュニティの一体感を求めているなら、あなたはまさに正しい場所に来ています！
+                </p>
+            </div>
+
+
+            <!-- video -->
+            <div class="video-body">
+                <div class="video-container">
+                    <video class="video" controls>
+                        <source src="vampire.mp4" type="video/mp4">
+                        Browser Anda tidak mendukung video tag.
+                    </video>
+                </div>
+            </div>
+
+
+            <!-- gambar api -->
+            <div class="wrapper">
+                <div class="fire-container">
+                    <img src="api.gif" alt="">
+                </div>
+                <div class="fire-container">
+                    <p>
+                        この世界は残酷です
+                    </p>
+                </div>
+                <div class="fire-container">
+                    <img src="api.gif" alt="">
+                </div>
+            </div>
+
+
+
+            <div class="card-container">
+                <div class="card" data-image="path/to/hover-image1.png">
+                    <div class="card-image" style="background-image: url('tampilan1.png');"></div>
+                    <h3>Katana</h3>
+                    <p>Alat perang jepang pada tahun 1939
+                    </p>
+                </div>
+                <div class="card" data-image="path/to/hover-image2.png">
+                    <div class="card-image" style="background-image: url('ramuan.png');"></div>
+                    <h3>Ramuan penyembuh</h3>
+                    <p>Minuman penyembuh segala penyakit kecuali demam</p>
+                </div>
+                <div class="card" data-image="path/to/hover-image3.png">
+                    <div class="card-image" style="background-image: url('album.png');"></div>
+                    <h3>Album Familiar</h3>
+                    <p>Album pada abada ke 7 familiar main kelereng</p>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="new-banner" id="new-banner">
+            <div class="slider" style="--quantity: 10">
+                <div class="item" style="--position: 1"><img src="foto1.jpg" alt="Album Image 1"></div>
+                <div class="item" style="--position: 2"><img src="foto2.jpg" alt="Album Image 2"></div>
+                <div class="item" style="--position: 3"><img src="foto3.jpg" alt="Album Image 3"></div>
+                <div class="item" style="--position: 4"><img src="foto4.jpg" alt="Album Image 4"></div>
+                <div class="item" style="--position: 5"><img src="foto5.jpg" alt="Album Image 5"></div>
+                <div class="item" style="--position: 6"><img src="foto6.jpg" alt="Album Image 6"></div>
+                <div class="item" style="--position: 7"><img src="foto7.jpg" alt="Album Image 7"></div>
+                <div class="item" style="--position: 8"><img src="foto8.jpg" alt="Album Image 8"></div>
+                <div class="item" style="--position: 9"><img src="foto9.jpg" alt="Album Image 9"></div>
+                <div class="item" style="--position: 10"><img src="foto10.jpg" alt="Album Image 10"></div>
+            </div>
+            <div class="content">
+                <h1 data-content="ALBUM">PHOTO</h1>
+                <div class="model"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="fungsi.js"></script>
+
+
+</body>
+
+</html>
