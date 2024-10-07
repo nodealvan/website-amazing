@@ -10,7 +10,6 @@
     flex-wrap: wrap;
     padding: 20px;
     height: 100%;
-
 }
 
 .new-content .text {
@@ -27,7 +26,7 @@
 }
 
 .card-container {
-    background-color: #a97f13;
+  
     border-radius: 10px;
     margin-top: 100px;
     display: flex;
@@ -37,21 +36,21 @@
 }
 
 .card {
-    background-color: transparent;
+    background-color: rgb(56, 47, 3);
     position: relative;
     width: 400px;
     height: 280px;
     border-radius: 15px;
     overflow: hidden;
-
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     background: transparent;
     cursor: pointer;
+    box-shadow: 0 4px 8px rgba(19, 213, 243, 0.1); /* Initial shadow */
 }
 
 .card:hover {
     transform: translateY(-5px);
-
+    box-shadow: 0 8px 16px rgba(1, 255, 242, 0.3); /* Hover shadow effect */
 }
 
 .card-image {
@@ -94,6 +93,7 @@
         height: auto;
     }
 }
+
 
 
 
